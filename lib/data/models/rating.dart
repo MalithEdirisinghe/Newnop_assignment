@@ -1,0 +1,28 @@
+import 'package:equatable/equatable.dart';
+
+class Rating extends Equatable {
+  final double rate;
+  final int count;
+
+  const Rating({
+    required this.rate,
+    required this.count,
+  });
+
+  factory Rating.fromJson(Map<String, dynamic> json) {
+    return Rating(
+      rate: (json['rate'] as num?)?.toDouble() ?? 0.0,
+      count: (json['count'] as num?)?.toInt() ?? 0,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'rate': rate,
+      'count': count,
+    };
+  }
+
+  @override
+  List<Object?> get props => [rate, count];
+}
