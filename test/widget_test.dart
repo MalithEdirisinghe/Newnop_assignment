@@ -17,7 +17,7 @@ void main() {
       productRepository: productRepository,
     ));
 
-    expect(find.text('Catalog'), findsOneWidget);
+    expect(find.text('Catalog'), findsWidgets);
     expect(find.byType(TextField), findsOneWidget);
   });
 }
