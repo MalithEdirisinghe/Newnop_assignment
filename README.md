@@ -2,12 +2,13 @@
 
 A production-ready Flutter product catalog mobile application built for the **Associate Flutter Developer Practical Assessment** at **Newnop**.
 
-This application demonstrates clean architecture principles, reactive state management using **Bloc/Cubit**, real-time search filtering, persistent user favorites, Material 3 dynamic light/dark theme switching, offline resilience, and robust error handling.
+This application demonstrates clean architecture principles, reactive state management using **Bloc/Cubit**, real-time search filtering, persistent user favorites, Material 3 dynamic light/dark theme switching, Material 3 Bottom Navigation Bar, offline resilience, and robust error handling.
 
 ---
 
 ## 🌟 Features
 
+- **Material 3 Bottom Navigation Bar**: Seamless tab switching between **Catalog**, **Favorites** (with real-time item count badge), and **Settings/Info** using `IndexedStack` to preserve scroll positions and active search states.
 - **Product Catalogue Display**: Clean Grid & List view layout options displaying product image, name, price, category, and interactive favourite button.
 - **Product Details View**: Dedicated view featuring `Hero` image transitions, rating score, category badge, full product description, and "Add to Cart" interaction.
 - **Real-Time Instant Search**: Substring matching search bar with automatic debouncing (`300ms`) updating the list dynamically as you type.
@@ -42,9 +43,11 @@ lib/
 │   └── theme/           # ThemeCubit (Light & Dark mode switching)
 └── presentation/
     ├── screens/
+    │   ├── main_screen.dart            # Root screen featuring Material 3 NavigationBar & IndexedStack
     │   ├── product_list_screen.dart    # Main Catalog Screen (Grid/List, Search, Filters)
     │   ├── product_detail_screen.dart  # Detailed Product View with Hero Animation
-    │   └── favorites_screen.dart       # Dedicated Favorited Products Screen
+    │   ├── favorites_screen.dart       # Dedicated Favorited Products Screen
+    │   └── settings_screen.dart        # Settings & Theme Toggle Screen
     └── widgets/
         ├── product_card.dart           # Grid view product card
         ├── product_list_tile.dart      # List view product tile
@@ -121,9 +124,9 @@ The output APK file will be located at:
    - *Challenge*: Rapid typing in the search bar triggering expensive list filtering on every keystroke.
    - *Solution*: Implemented a custom `Debouncer` class (`300ms`), delaying search filter execution until typing pauses.
 
-3. **Handling Image Loading & Network Failures**:
-   - *Challenge*: Image loading lag or broken URLs interrupting card layouts.
-   - *Solution*: Integrated `cached_network_image` paired with `shimmer` skeleton loaders and placeholder icons.
+3. **Preserving Tab State across Navigation**:
+   - *Challenge*: Tab switches resetting scroll position or active search text.
+   - *Solution*: Implemented `IndexedStack` inside `MainScreen` with `NavigationBar`.
 
 ---
 
