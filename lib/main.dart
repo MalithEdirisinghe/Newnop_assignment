@@ -7,7 +7,7 @@ import 'data/services/local_storage_service.dart';
 import 'logic/favorites/favorites_cubit.dart';
 import 'logic/product/product_cubit.dart';
 import 'logic/theme/theme_cubit.dart';
-import 'presentation/screens/main_screen.dart';
+import 'presentation/screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,7 +57,7 @@ class ProductCatalogApp extends StatelessWidget {
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
               themeMode: themeMode,
-              home: const MainScreen(),
+              home: const SplashScreen(),
             );
           },
         ),

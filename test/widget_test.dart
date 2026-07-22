@@ -17,6 +17,10 @@ void main() {
       productRepository: productRepository,
     ));
 
+    // Advance timer past splash screen
+    await tester.pump(const Duration(seconds: 3));
+    await tester.pump();
+
     expect(find.text('Catalog'), findsWidgets);
     expect(find.byType(TextField), findsOneWidget);
   });
