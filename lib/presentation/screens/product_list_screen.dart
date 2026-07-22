@@ -38,16 +38,13 @@ class _ProductListScreenState extends State<ProductListScreen> {
       appBar: AppBar(
         title: Row(
           children: [
-            Container(
-              padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: const Color(0xFF635BFF),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: const Icon(
-                Icons.storefront_rounded,
-                color: Colors.white,
-                size: 20,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                'assets/icon/app_icon.png',
+                width: 30,
+                height: 30,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(width: 10),
