@@ -6,8 +6,16 @@ This application demonstrates clean architecture principles, reactive state mana
 
 ---
 
+## 🔗 Deliverables & Links
+
+- **GitHub Repository**: [https://github.com/MalithEdirisinghe/Newnop_assignment](https://github.com/MalithEdirisinghe/Newnop_assignment)
+- **Google Drive Folder (Release APK & Demo Video)**: [https://drive.google.com/drive/folders/1WZo8O36U_jDgYnZG_0N9is8efnIGpvcY?usp=sharing](https://drive.google.com/drive/folders/1WZo8O36U_jDgYnZG_0N9is8efnIGpvcY?usp=sharing)
+
+---
+
 ## 🌟 Features
 
+- **Animated Splash Screen**: Custom high-resolution brand logo animation with smooth fade transitions on app launch.
 - **Material 3 Bottom Navigation Bar**: Seamless tab switching between **Catalog**, **Favorites** (with real-time item count badge), and **Settings/Info** using `IndexedStack` to preserve scroll positions and active search states.
 - **Product Catalogue Display**: Clean Grid & List view layout options displaying product image, name, price, category, and interactive favourite button.
 - **Product Details View**: Dedicated view featuring `Hero` image transitions, rating score, category badge, full product description, and "Add to Cart" interaction.
@@ -43,6 +51,7 @@ lib/
 │   └── theme/           # ThemeCubit (Light & Dark mode switching)
 └── presentation/
     ├── screens/
+    │   ├── splash_screen.dart          # Custom Animated Splash Screen
     │   ├── main_screen.dart            # Root screen featuring Material 3 NavigationBar & IndexedStack
     │   ├── product_list_screen.dart    # Main Catalog Screen (Grid/List, Search, Filters)
     │   ├── product_detail_screen.dart  # Detailed Product View with Hero Animation
